@@ -1,0 +1,19 @@
+{
+  "name": "fil__testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanruqing/FIL__Testing.git"
+  },
+  "author": "Lan Ruqing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lanruqing/FIL__Testing/issues"
+  },
+  "homepage": "https://github.com/lanruqing/FIL__Testing#readme"
+}
