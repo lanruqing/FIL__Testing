@@ -1,0 +1,17 @@
+
+@import "../../styles/main.scss";
+.banner_personalInfo{
+    display: flex;
+    justify-content: space-between;
+    padding:1rem;
+    align-items: center;
+    .banner_personalInfo_btn{
+        @include allCenter();
+        font-size:1rem;
+        .banner_personalInfo_btn_icon{
+            font-size: 2rem;
+            height: auto;
+            margin-right: 0.5rem;
+        }
+    }
+}

@@ -11,6 +11,8 @@ import { FilCardComponent } from './components/fil-card/fil-card.component';
 import { BannerComponent } from './components/fil-banner/banner.component';
 import { FilHeaderComponent } from './components/fil-header/fil-header.component';
 
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { FilHeaderComponent } from './components/fil-header/fil-header.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,52 @@
-<p>fil-header works!</p>
+<header>
+  <ng-container *ngIf="!isMoblie">
+
+    <div>
+      Kontakt
+    </div>
+    <div>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      <span>
+        www.fidelity.de
+      </span>
+    </div>
+    <div>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+      <span>
+        Log out
+      </span>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isMoblie">
+    <img src="./assets/img/fil-logo_mobile.png" alt="">
+    <span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="header menu toggle" class="header_menu_btn">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item  class="header_menu_forMobile_btns">
+          <span>Kontakt</span>
+        </button>
+        <button mat-menu-item  class="header_menu_forMobile_btns">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+          <span>
+            www.fidelity.de
+          </span>
+        </button>
+        <button mat-menu-item  class="header_menu_forMobile_btns">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+          <span>
+            Log out
+          </span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon class="banner_personalInfo_btn_icon">perm_identity</mat-icon>
+          <span>
+            Personal Data
+          </span>
+        </button>
+      </mat-menu>
+    </span>
+  </ng-container>
+
+</header>

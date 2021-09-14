@@ -1,0 +1,37 @@
+@import "../../styles/main.scss";
+header{
+    width: 100%;
+    background-color: $gray;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &>div{
+        border-left: 1px solid $border_gray;
+        color: white;
+        flex: 0 0 10rem;
+        padding: 1rem 2rem;
+        text-align: center;
+        display: flex;
+        @include allCenter();
+        &:last-of-type{
+            border-left-color: transparent;
+            background-color: $link_blue;
+        }
+    }
+    .header_menu_btn{
+        background-color: $gray;
+        border-color: transparent;
+        color: white;
+        font-size: 2rem;
+    }
+}
+@media(max-width:$mobile){
+    header{
+        justify-content:space-between;
+        padding-right: 1rem;
+        img{
+            width:3rem;
+            height: auto;
+        }        
+    }
+}
