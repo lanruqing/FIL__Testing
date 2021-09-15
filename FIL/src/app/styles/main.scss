@@ -1,12 +1,22 @@
 @import "./variable.scss";
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 @mixin allCenter() {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@mixin font($size,$color){
+    @if $size=="small" {
+        font-size: 0.5rem;
+    }
+    @if $size=="normal" {
+        font-size: 1rem;
+    }
+    @if $size=="medium" {
+        font-size: 1.5rem;
+    }
+    @if $size=="big" {
+        font-size: 2.5rem;
+    }
+    color: $color;
 }
 @import "./mediaQuery.scss";

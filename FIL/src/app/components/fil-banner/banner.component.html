@@ -1,13 +1,70 @@
-<div>
-    <ng-container  *ngIf="!isMoblie">
-        <div class="banner_personalInfo">
-            <img src="./assets/img/fil-logo.svg" alt="">
-            <span class="banner_personalInfo_btn">
-                <mat-icon class="banner_personalInfo_btn_icon">perm_identity</mat-icon>
-                <span>
-                    Personal Data
-                </span>
-            </span>
+<ng-container *ngIf="!isMoblie">
+  <div>
+    <div class="banner_personalInfo">
+      <img src="./assets/img/fil-logo.svg" alt="">
+      <span class="banner_personalInfo_btn">
+        <mat-icon class="banner_personalInfo_btn_icon">perm_identity</mat-icon>
+        <span>
+          Personal Data
+        </span>
+      </span>
+    </div>
+  </div>
+  <nav>
+    <div *ngFor="let nav of navBtns;let i = index">
+      <ng-container *ngIf="!nav.hasChildren">
+        <span [class]="i == 0?'nav_btn active':'nav_btn'">{{nav.title}}</span>
+      </ng-container>
+      <ng-container *ngIf="nav.hasChildren">
+        <button [class]="i == 0?'nav_btn active':'nav_btn'" [matMenuTriggerFor]="aboveMenu">
+          {{nav.title}}
+          <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu class="nav_btn_childMenu" #aboveMenu="matMenu" xPosition="before">
+          <button mat-menu-item *ngFor="let child of nav.childrenItem">{{child.title}}</button>
+        </mat-menu>
+      </ng-container>
+    </div>
+  </nav>
+</ng-container>
+<div class="banner_body">
+    <div class="banner_value_card">
+        <div class="banner_value_card_value_con">
+            <p class="banner_value_card_item">Erfahren Sie von unseren Investment</p>
+            <h4 class="banner_value_card_item">Gesamtwert</h4>
         </div>
-    </ng-container>
+        <div class="banner_value_card_value_con">
+            <span class="banner_value_card_item banner_value_amount">120.500,000 €</span>
+            <span class="banner_value_card_item tips">inkl. Konto</span>
+        </div>
+        <div class="banner_value_card_value_con">
+            <span class="banner_value_card_item banner_value_amount">2.000 €</span>
+            <span class="banner_value_card_item tips">Konto</span>
+        </div>
+    </div>
+    <div class="banner_performance_card">
+        <p class="banner_performance_card_item banner_performance_card_head">Performance</p>        
+        <p class="banner_performance_card_item" *ngFor="let item of bannerData['performance']">
+            <span class="performance_item_title">
+                {{item.name}}
+            </span>
+            <span class="performance_item_amount">
+                <span>{{item.amount}}</span>
+                <mat-icon *ngIf="item.hasTooltip" class="error_outline">error_outline</mat-icon>
+            </span>
+        </p>
+    </div>
+    <div class="banner_quickLinks_card">
+        <p class="banner_quickLinks_card_head">
+            Quick-Links
+        </p>
+        <p *ngFor="let item of bannerData['quickLinks']">
+          <mat-icon>
+            {{item.icon}}
+          </mat-icon>
+          <span>
+            {{item.title}}
+          </span>
+        </p>
+    </div>
 </div>

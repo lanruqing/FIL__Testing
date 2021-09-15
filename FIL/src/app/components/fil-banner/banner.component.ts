@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
+import { forkJoin } from 'rxjs';
 import { MediaQueryService } from 'src/app/media-query.service';
-
 @Component({
   selector: 'fil-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss']
+  styleUrls: ['./banner.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BannerComponent implements OnInit {
-
-  constructor(private mq:MediaQueryService) { }
+  navBtns:[];
+  bannerData:{};
+  constructor(private mq:MediaQueryService,private http:HttpClient) { }
   isMoblie:boolean = false;
   isTablet_small:boolean = false;
   isTablet:boolean = false;
@@ -22,5 +25,15 @@ export class BannerComponent implements OnInit {
         this.islaptop,
         this.isdesktop] = [...data]
     })
+    this.http.get("./assets/data.json").subscribe(
+      json=>{
+        this.navBtns = json["navBtns"]
+        this.bannerData = json["bannerData"]
+        console.table(this.bannerData)
+      },
+      err=>{
+        console.log(err)
+      }
+    )
   }
 }

@@ -19,34 +19,56 @@
   </ng-container>
   <ng-container *ngIf="isMoblie">
     <img src="./assets/img/fil-logo_mobile.png" alt="">
-    <span>
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="header menu toggle" class="header_menu_btn">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item  class="header_menu_forMobile_btns">
-          <span>Kontakt</span>
+    <div class="mobilenavBtns">
+      <span>
+        <button mat-icon-button [matMenuTriggerFor]="mobileNav" aria-label="header menu toggle" class="header_menu_btn">
+          <mat-icon>menu</mat-icon>
         </button>
-        <button mat-menu-item  class="header_menu_forMobile_btns">
-          <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-          <span>
-            www.fidelity.de
-          </span>
+        <mat-menu #mobileNav="matMenu">
+          <ng-container *ngFor="let nav of navBtns;let i = index">
+            <ng-container *ngIf="!nav.hasChildren">
+              <button mat-menu-item>{{nav.title}}</button>
+            </ng-container>
+            <ng-container *ngIf="nav.hasChildren">
+              <button mat-menu-item [matMenuTriggerFor]="aboveMenu">{{nav.title}}</button>
+                <mat-menu class="" #aboveMenu="matMenu" xPosition="before">
+                  <button mat-menu-item *ngFor="let child of nav.childrenItem">{{child.title}}</button>
+              </mat-menu>
+            </ng-container>
+          </ng-container>
+  
+        </mat-menu>
+      </span>
+      <span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="header menu toggle" class="header_menu_btn">
+          <mat-icon>more_vert</mat-icon>
         </button>
-        <button mat-menu-item  class="header_menu_forMobile_btns">
-          <mat-icon aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
-          <span>
-            Log out
-          </span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon class="banner_personalInfo_btn_icon">perm_identity</mat-icon>
-          <span>
-            Personal Data
-          </span>
-        </button>
-      </mat-menu>
-    </span>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="header_menu_forMobile_btns">
+            <span>Kontakt</span>
+          </button>
+          <button mat-menu-item class="header_menu_forMobile_btns">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            <span>
+              www.fidelity.de
+            </span>
+          </button>
+          <button mat-menu-item class="header_menu_forMobile_btns">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+            <span>
+              Log out
+            </span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon class="banner_personalInfo_btn_icon">perm_identity</mat-icon>
+            <span>
+              Personal Data
+            </span>
+          </button>
+        </mat-menu>
+      </span>
+    </div>
+    
   </ng-container>
 
 </header>

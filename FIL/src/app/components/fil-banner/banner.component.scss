@@ -15,3 +15,168 @@
         }
     }
 }
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $deep_gray;
+    &>div{
+        .nav_btn{
+            border: none;
+            background-color: transparent;
+            color: white;
+            font-size: 1rem;
+            padding: 1rem;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+            &.active{
+                border-bottom-color:#42bdea;
+            }
+            @include allCenter();
+            width: 150px;
+            height: 100%;
+        }
+    }
+}
+.banner_body{
+    background-color: $gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 2rem 5rem;
+    &>div{
+        width: 33%;
+        margin: 0 1rem;
+    }
+    .banner_value_card{
+        display: flex;
+        flex-direction: column;
+        .banner_value_card_value_con{
+            display: flex;
+            flex-direction: column;
+        }
+        .banner_value_card_item{
+            margin: 1rem 0;
+        }
+        p{
+            @include font('normal',white);
+        }
+        h4{
+            @include font('medium',white);
+            font-weight: bold;
+        }
+        .banner_value_amount{
+            @include font('big',white);
+        }
+        .tips{
+            @include font('normal',white);
+        }
+    }
+    .banner_performance_card{
+        border-radius: 10px;
+        background-color: $deep_gray;
+        display: flex;
+        flex-direction: column;
+        .banner_performance_card_item{
+            &.banner_performance_card_head{
+                @include font('medium',white)
+
+            }
+            width: 100%;
+            border-bottom: 1px solid $border_gray;
+            padding: 2rem 1rem;
+            margin-bottom: 0;
+            @include font('normal',white);
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            span{
+                &.performance_item_amount{
+                    span{
+                        margin-right: 1rem;
+                        @include font('medium',$green);
+                    }
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+            &:last-of-type{
+                border-bottom:0;
+            }
+        }
+    }
+    .banner_quickLinks_card{
+        background-color: #4d5766;
+        .banner_quickLinks_card_head{
+            border-bottom: 1px solid $border_gray;
+            padding: 2rem 1rem;
+            @include font('medium',white)
+        }
+    }
+}
+@media(max-width:$tablet) and (min-width:$mobile){
+    .banner_body{
+        padding: 0.5rem;
+        flex-wrap: wrap;
+        &>div{
+            &.banner_value_card{
+                width: 90%;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: 1px solid $border_gray;
+                margin-bottom: 1.5rem;
+            }
+            width: 45%;
+            margin: 0 1rem;
+        }
+    }
+}
+@media(max-width:$mobile){
+    .banner_body{
+        padding: 1rem 2rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        &>div{
+            width: 100%;
+            margin: 0 0.5rem;
+            &.banner_value_card{
+                .banner_value_card_item{
+                    width: 100%;
+                }
+            }
+            &.banner_performance_card{
+                .banner_performance_card_item{
+                    &.banner_performance_card_head{
+                        padding:2rem 1rem;
+    
+                    }
+                    flex-direction: column;
+                    padding: 0.5rem 1rem;
+                    span{
+                        &.performance_item_amount{
+                            width: 100%;
+                            padding: 0.5rem 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.mat-menu-panel{
+    &.nav_btn_childMenu{
+        background-color: $gray;
+        border-radius: 0;
+        .mat-menu-content{
+            padding: 0;
+            .mat-menu-item{
+                width: 150px;
+                @include allCenter();
+                font-size:1rem;
+                color: white;
+            }
+        }
+    }
+}

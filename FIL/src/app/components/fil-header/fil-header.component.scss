@@ -28,10 +28,20 @@ header{
 @media(max-width:$mobile){
     header{
         justify-content:space-between;
-        padding-right: 1rem;
+        padding-right: 0;
         img{
             width:3rem;
             height: auto;
-        }        
+        }
+        &>div{
+            &:last-of-type{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                border-left-color: transparent;
+                background-color: transparent;
+                padding: 0;
+            }
+        }
     }
 }
