@@ -8,8 +8,8 @@ header{
     &>div{
         border-left: 1px solid $border_gray;
         color: white;
-        flex: 0 0 10rem;
-        padding: 1rem 2rem;
+        width:10rem;
+        padding: 0.5rem 1rem;
         text-align: center;
         display: flex;
         @include allCenter();

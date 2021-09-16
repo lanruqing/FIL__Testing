@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { forkJoin } from 'rxjs';
+import { CommonService } from 'src/app/common.service';
 import { MediaQueryService } from 'src/app/media-query.service';
 @Component({
   selector: 'fil-banner',
@@ -11,13 +12,14 @@ import { MediaQueryService } from 'src/app/media-query.service';
 export class BannerComponent implements OnInit {
   navBtns:[];
   bannerData:{};
-  constructor(private mq:MediaQueryService,private http:HttpClient) { }
   isMoblie:boolean = false;
   isTablet_small:boolean = false;
   isTablet:boolean = false;
   islaptop:boolean = false;
   isdesktop:boolean = true;
+  constructor(private mq:MediaQueryService,private http:HttpClient,private common:CommonService) { }
   ngOnInit(): void {
+    this.bannerData = {}
     this.mq.query().subscribe(data=>{
       [this.isMoblie,
         this.isTablet_small,
@@ -25,15 +27,27 @@ export class BannerComponent implements OnInit {
         this.islaptop,
         this.isdesktop] = [...data]
     })
-    this.http.get("./assets/data.json").subscribe(
+    this.common.allData.subscribe(
       json=>{
-        this.navBtns = json["navBtns"]
-        this.bannerData = json["bannerData"]
-        console.table(this.bannerData)
+        if(json){
+          this.navBtns = json["navBtns"]
+          this.bannerData = json["bannerData"]
+          console.table(this.bannerData)
+        }
       },
       err=>{
         console.log(err)
       }
     )
+    // this.http.get("./assets/data.json").subscribe(
+    //   json=>{
+    //     this.navBtns = json["navBtns"]
+    //     this.bannerData = json["bannerData"]
+    //     console.table(this.bannerData)
+    //   },
+    //   err=>{
+    //     console.log(err)
+    //   }
+    // )
   }
 }

@@ -1,6 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
-
+@import './app/styles/variable.scss';
 *{
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +8,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 #page_body{
     width: 100%;
-    max-width: 1440px;
+    min-height: 100vh;
     margin: 0 auto;
+    background-color: $bg_gray;
 }

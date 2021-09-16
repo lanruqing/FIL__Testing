@@ -1,6 +1,5 @@
 {
-  "navBtns": [
-    {
+  "navBtns": [{
       "title": "Uberblick",
       "hasChildren": false
     },
@@ -46,38 +45,132 @@
       ]
     }
   ],
-  "bannerData":{
-    "performance":[
+  "bannerData": {
+    "performance": [{
+      "name": "Aktueller Gewinn/ Verlust",
+      "amount": "+5.200€",
+      "hasTooltip": true
+    }, {
+      "name": "Performance seit Depotstart",
+      "amount": "+30.50%",
+      "hasTooltip": true
+    }, {
+      "name": "Performance p.a.",
+      "amount": "+5.50%",
+      "hasTooltip": true
+    }],
+    "quickLinks": [{
+        "title": "Fonds finden",
+        "icon": "find_in_page"
+      },
       {
-        "name":"Aktueller Gewinn/ Verlust",
-        "amount":"+5.200€",
-        "hasTooltip":true
-      },{
-        "name":"Performance seit Depotstart",
-        "amount":"+30.50%",
-        "hasTooltip":true
-      },{
-        "name":"Performance p.a.",
-        "amount":"+5.50%",
-        "hasTooltip":true
+        "title": "Sparplane",
+        "icon": "settings"
+      },
+      {
+        "title": "Postfach",
+        "icon": "email"
+      },
+      {
+        "title": "Depotreport",
+        "icon": "file_copy"
+      }
+    ]
+  },
+  "tableData1": {
+    "hasBtn": true,
+    "head": [{
+        "key": "bestand",
+        "value": "Bestand",
+        "show": true
+      },
+      {
+        "key": "ruck",
+        "value": "Rucknahmepreis",
+        "show": false
+      },
+      {
+        "key": "eint",
+        "value": "Einstandswert",
+        "show": true
+      },
+      {
+        "key": "akt",
+        "value": "Aktueller GuV",
+        "show": true
+      },
+      {
+        "key": "ers",
+        "value": "Erster Zufluss",
+        "show": false
+      },
+      {
+        "key": "ges_E",
+        "value": "Gesamtwert(EUR)",
+        "show": true
+      },
+      {
+        "key": "ges_F",
+        "value": "Gesamtwert(Fondswahrung)",
+        "show": false
+      },
+      {
+        "key": "performance",
+        "value": "Performance Kalenderjahr",
+        "show": false
+      },
+      {
+        "key": "performanceE",
+        "value": "Performance E pa %",
+        "show": true
       }
     ],
-    "quickLinks":[
+    "body": [
       {
-        "title":"Fonds finden",
-        "icon":"find_in_page"
+        "bestand": {
+          "name":"Fidelity Funds: Asian Special Situation Fund W (EUR)",
+          "hasLink":true,
+          "link":{
+            "name":"Zum Fondsportrat"
+          }
+        },
+        "ruck": "fidelity",
+        "eint": "3.200,50 EUR",
+        "akt": {
+          "name":"320.05 EUR",
+          "hasPer":true,
+          "per":"+10.00%",
+          "hasClass":true,
+          "class":"green_text"
+        },
+        "ers": "",
+        "ges_E": "3.520,55 EUR",
+        "ges_F": "3000",
+        "performance": "+15.50%",
+        "performanceE": "+15.50%",
+        "hasBtn": true,
+        "btnTitle": "Fonds Kaufen",
+        "hasMore": true,
+        "hasMoreMenu": [
+          "Verkaufen", "Tauschen"
+        ]
       },
       {
-        "title":"Sparplane",
-        "icon":"settings"
-      },
-      {
-        "title":"Postfach",
-        "icon":"email"
-      },
-      {
-        "title":"Depotreport",
-        "icon":"file_copy"
+        "bestand": "Fidelity Funds: Global Special Situation Fund W (EUR)",
+        "ruck": "fidelity",
+        "eint": "3.200,50",
+        "akt": "320.05",
+        "ers": "",
+        "ges_E": "3.520,55",
+        "ges_F": "3000",
+        "performance": "-15.50%",
+        "performanceE": "-15.50%",
+        "hasBtn": true,
+        "btnTitle": "Fonds Kaufen",
+        "hasMore": true,
+        "hasMoreMenu": [
+          "item1", "item2"
+        ]
       }
     ]
   }

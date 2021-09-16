@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MediaQueryService } from './media-query.service';
+import { HttpClient } from '@angular/common/http';
+import { CommonService } from './common.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,10 +9,17 @@ import { MediaQueryService } from './media-query.service';
 })
 export class AppComponent {
   title = 'FIL';
-  constructor(private media:MediaQueryService){
+  constructor(private media:MediaQueryService,private http:HttpClient,private common:CommonService){
     // media.query();
   }
+  tableData1;1
   ngOnInit(): void {
-    this.media.query();
+    this.common.getAlldate().subscribe(
+      data=>{
+        if(data){
+          this.tableData1 = data["tableData1"]
+        }
+      }
+    )
   }
 }
