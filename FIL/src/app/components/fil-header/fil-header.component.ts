@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaQueryService } from 'src/app/media-query.service';
 import { HttpClient } from '@angular/common/http';
+import { IconService } from 'src/app/icon.service';
 @Component({
   selector: 'fil-header',
   templateUrl: './fil-header.component.html',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FilHeaderComponent implements OnInit {
 
-  constructor(private mq:MediaQueryService,private http:HttpClient) { }
+  constructor(private mq:MediaQueryService,private http:HttpClient,public icon:IconService) { }
   navBtns:[];
   isMoblie:boolean = false;
   isTablet_small:boolean = false;

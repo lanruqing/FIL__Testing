@@ -13,6 +13,7 @@ header{
         text-align: center;
         display: flex;
         @include allCenter();
+        justify-content: space-around;
         &:last-of-type{
             border-left-color: transparent;
             background-color: $link_blue;
