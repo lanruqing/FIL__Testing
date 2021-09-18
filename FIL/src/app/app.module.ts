@@ -12,6 +12,7 @@ import { FilCardComponent } from './components/fil-card/fil-card.component';
 import { BannerComponent } from './components/fil-banner/banner.component';
 import { FilHeaderComponent } from './components/fil-header/fil-header.component';
 import { TableEditComponent } from './components/fil-table/table-edit/table-edit.component';
+import { FilFooterComponent } from './components/fil-footer/fil-footer.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
@@ -28,7 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FilCardComponent,
     BannerComponent,
     FilHeaderComponent,
-    TableEditComponent
+    TableEditComponent,
+    FilFooterComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,11 @@ export class FilTableComponent implements OnInit {
       },
       "panelClass":"table_edit_dialog"
     });
+    dialogRef.afterClosed().subscribe(config=>{
+      if(config && config!==''){
+        this.tableData.head = config;
+      }
+    })
   }
   ngOnInit(): void {
     this.tableData = {};

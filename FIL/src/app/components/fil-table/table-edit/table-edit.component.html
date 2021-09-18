@@ -6,15 +6,18 @@
         <p>Bitte wahlen Sie:</p>
     </div>
     <div class="table_edit_con">
-        <span *ngFor="let checkbox of data.options" class="table_confog_checkbox">
+        <span *ngFor="let checkbox of options" class="table_confog_checkbox">
             <mat-checkbox class="example-margin" [value]="checkbox.key" [checked]="checkbox.show" [disabled]="checkbox.disabled" (change)="checked($event,checkbox)"> 
                 {{checkbox.value}}
             </mat-checkbox>
         </span>
     </div>
+    <div class="table_edit_con">
+        <p>Ausgewahlt {{this.checkedItem.length}} (maximal 6)</p>
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-    <button class="edit_table_btn" mat-flat-button color="primary" mat-dialog-close>Save</button>
+    <button class="edit_table_btn" mat-flat-button color="primary" [mat-dialog-close]="options">Save</button>
     <button class="edit_table_btn" mat-stroked-button color="primary" mat-dialog-close>Close</button>
 
 </mat-dialog-actions>

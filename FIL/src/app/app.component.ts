@@ -12,12 +12,14 @@ export class AppComponent {
   constructor(private media:MediaQueryService,private http:HttpClient,private common:CommonService){
     // media.query();
   }
-  tableData1;1
+  tableData1;
+  tableData2;
   ngOnInit(): void {
     this.common.getAlldate().subscribe(
       data=>{
         if(data){
           this.tableData1 = data["tableData1"]
+          this.tableData2 = data["tableData2"]
         }
       }
     )
