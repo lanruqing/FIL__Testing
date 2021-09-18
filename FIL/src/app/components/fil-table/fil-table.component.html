@@ -7,9 +7,7 @@
       </mat-icon>
     </h2>
     <button (click)="openConfig()" mat-button *ngIf="!isMoblie">
-      <mat-icon>
-        settings
-      </mat-icon>
+      <fa-icon [icon]="configIcon"></fa-icon>
       <span>
         Ansicht Personalisieren
       </span>

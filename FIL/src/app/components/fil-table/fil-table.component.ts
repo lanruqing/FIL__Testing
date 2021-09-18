@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { MediaQueryService } from 'src/app/media-query.service';
 import {MatDialog} from '@angular/material/dialog';
 import { TableEditComponent } from './table-edit/table-edit.component';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'fil-table',
   templateUrl: './fil-table.component.html',
@@ -11,6 +12,7 @@ import { TableEditComponent } from './table-edit/table-edit.component';
 export class FilTableComponent implements OnInit {
   @Input() tableTitle:string;
   @Input() tableData;
+  configIcon = faCog
   isMoblie:boolean = false;
   isTablet_small:boolean = false;
   isTablet:boolean = false;

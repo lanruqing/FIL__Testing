@@ -17,9 +17,24 @@ div{
         padding:2rem;
         flex: 0 0 30%;
     }
+    &.table_edit_con{
+        padding:1.5rem 1rem 0 1rem;
+        p{
+            @include font("normal",black);
+            padding:0 0 0 1rem;
+            margin: 0;
+        }
+    }
 }
 ::ng-deep .table_edit_dialog{
     .mat-dialog-container{
-        padding: 0;
+        padding: 0 0 1rem 0;
+        .edit_table_btn{
+            width: 5rem;
+            &:first-of-type{
+                margin-right: 1rem;
+                background-color: $btn_blue;
+            }
+        }
     }
 }
