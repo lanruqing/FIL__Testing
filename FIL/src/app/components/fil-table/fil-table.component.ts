@@ -1,7 +1,8 @@
 import { Component, OnInit,Input,SimpleChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MediaQueryService } from 'src/app/media-query.service';
-
+import {MatDialog} from '@angular/material/dialog';
+import { TableEditComponent } from './table-edit/table-edit.component';
 @Component({
   selector: 'fil-table',
   templateUrl: './fil-table.component.html',
@@ -15,8 +16,15 @@ export class FilTableComponent implements OnInit {
   isTablet:boolean = false;
   islaptop:boolean = false;
   isdesktop:boolean = true;
-  constructor(private http:HttpClient,private mq:MediaQueryService) { }
-
+  constructor(private http:HttpClient,private mq:MediaQueryService,private dialog:MatDialog) { }
+  openConfig(){
+    const dialogRef = this.dialog.open(TableEditComponent,{
+      data:{
+        "options":this.tableData.head
+      },
+      "panelClass":"table_edit_dialog"
+    });
+  }
   ngOnInit(): void {
     this.tableData = {};
     this.mq.query().subscribe(data=>{

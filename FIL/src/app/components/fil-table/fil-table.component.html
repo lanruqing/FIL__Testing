@@ -2,11 +2,11 @@
   <div class="table_header">
     <h2>
       <span>{{tableTitle}}</span>
-      <mat-icon *ngIf="isMoblie">
+      <mat-icon (click)="openConfig()" *ngIf="isMoblie">
         settings
       </mat-icon>
     </h2>
-    <button mat-button *ngIf="!isMoblie">
+    <button (click)="openConfig()" mat-button *ngIf="!isMoblie">
       <mat-icon>
         settings
       </mat-icon>

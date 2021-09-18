@@ -11,10 +11,13 @@ import { FilTooltipComponent } from './components/fil-tooltip/fil-tooltip.compon
 import { FilCardComponent } from './components/fil-card/fil-card.component';
 import { BannerComponent } from './components/fil-banner/banner.component';
 import { FilHeaderComponent } from './components/fil-header/fil-header.component';
+import { TableEditComponent } from './components/fil-table/table-edit/table-edit.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,8 @@ import {MatButtonModule} from '@angular/material/button';
     FilTooltipComponent,
     FilCardComponent,
     BannerComponent,
-    FilHeaderComponent
+    FilHeaderComponent,
+    TableEditComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +36,12 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatIconModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[TableEditComponent]
 })
 export class AppModule { }

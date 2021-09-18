@@ -1,0 +1,25 @@
+@import '../../../styles/main.scss';
+*{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    background-color: $bg_gray;
+    padding: 1rem 1.5rem;
+}
+div{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    .table_confog_checkbox{
+        padding:2rem;
+        flex: 0 0 30%;
+    }
+}
+::ng-deep .table_edit_dialog{
+    .mat-dialog-container{
+        padding: 0;
+    }
+}
