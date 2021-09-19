@@ -1,39 +1,55 @@
 @import '../../../styles/main.scss';
-*{
+* {
     margin: 0;
     padding: 0;
 }
-h3{
+
+h3 {
     background-color: $bg_gray;
     padding: 1rem 1.5rem;
 }
-div{
+
+div {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    .table_confog_checkbox{
-        padding:2rem;
+    .table_confog_checkbox {
+        padding: 2rem;
         flex: 0 0 30%;
     }
-    &.table_edit_con{
-        padding:1.5rem 1rem 0 1rem;
-        p{
-            @include font("normal",black);
-            padding:0 0 0 1rem;
+    &.table_edit_con {
+        padding: 1.5rem 1rem 0 1rem;
+        p {
+            @include font("normal", black);
+            padding: 0 0 0 1rem;
             margin: 0;
         }
     }
 }
-::ng-deep .table_edit_dialog{
-    .mat-dialog-container{
+
+::ng-deep .table_edit_dialog {
+    .mat-dialog-container {
         padding: 0 0 1rem 0;
-        .edit_table_btn{
-            width: 5rem;
-            &:first-of-type{
-                margin-right: 1rem;
-                background-color: $btn_blue;
+        .table_edit_bottom_container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            p {
+                padding: 1rem 0 0 3rem;
+                @include font("nomral", black);
+                font-weight: bold;
+            }
+            .table_edit_bottom_btns {
+                @include allCenter();
+                .edit_table_btn {
+                    width: 8rem;
+                    &:first-of-type {
+                        margin-right: 1rem;
+                        background-color: $btn_blue;
+                    }
+                }
             }
         }
     }

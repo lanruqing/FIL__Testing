@@ -13,11 +13,15 @@
         </span>
     </div>
     <div class="table_edit_con">
-        <p>Ausgewahlt {{this.checkedItem.length}} (maximal 6)</p>
+
     </div>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-    <button class="edit_table_btn" mat-flat-button color="primary" [mat-dialog-close]="options">Save</button>
-    <button class="edit_table_btn" mat-stroked-button color="primary" mat-dialog-close>Close</button>
-
+    <div class="table_edit_bottom_container">
+        <p>Ausgewahlt {{this.checkedItem.length}} (maximal 6)</p>
+        <div class="table_edit_bottom_btns">
+            <button class="edit_table_btn" mat-flat-button color="primary" [mat-dialog-close]="options">Save</button>
+            <button class="edit_table_btn" mat-stroked-button color="primary" mat-dialog-close>Close</button>
+        </div>
+    </div>
 </mat-dialog-actions>

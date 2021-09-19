@@ -1,1 +1,14 @@
-<p>fil-tooltip works!</p>
+<div [class]="size?size+' tootip_container':'tootip_container'">
+    <div *ngIf="!isMobile" class="tooltip_title">{{title}}</div>
+    <div class="tootip_body">
+        <fa-icon class="fil_icon tooltip_icon" [icon]="icon.info" (click)=show()></fa-icon>
+        <div class="tootip_content" *ngIf="showTooltip && hasPop">
+            <span class="tootip_content_close">
+                <fa-icon [icon]="icon.close" class="fil_icon" (click)=close()></fa-icon>
+            </span>
+            <span *ngFor="let t of tooltips" class="tooltip_item">
+                {{t}}
+            </span>
+        </div>
+    </div>
+</div>

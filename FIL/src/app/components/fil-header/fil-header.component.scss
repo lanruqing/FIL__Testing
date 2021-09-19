@@ -1,41 +1,41 @@
 @import "../../styles/main.scss";
-header{
+header {
     width: 100%;
     background-color: $gray;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    &>div{
+    &>div {
         border-left: 1px solid $border_gray;
         color: white;
-        width:10rem;
+        width: 10rem;
         padding: 0.5rem 1rem;
         text-align: center;
         display: flex;
         @include allCenter();
-        justify-content: space-around;
-        &:last-of-type{
+        &:last-of-type {
             border-left-color: transparent;
             background-color: $link_blue;
         }
     }
-    .header_menu_btn{
+    .header_menu_btn {
         background-color: $gray;
         border-color: transparent;
         color: white;
         font-size: 2rem;
     }
 }
-@media(max-width:$mobile){
-    header{
-        justify-content:space-between;
+
+@media(max-width:$mobile) {
+    header {
+        justify-content: space-between;
         padding-right: 0;
-        img{
-            width:3rem;
+        img {
+            width: 3rem;
             height: auto;
         }
-        &>div{
-            &:last-of-type{
+        &>div {
+            &:last-of-type {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
@@ -45,4 +45,16 @@ header{
             }
         }
     }
+}
+
+::ng-deep .fil_icon {
+    margin-right: 0.5rem;
+}
+
+::ng-deep .header_icon_btn {
+    font-size: 1.3rem;
+}
+
+::ng-deep .fil_icon_alt {
+    margin-left: 0.3rem;
 }

@@ -1,67 +1,66 @@
 <section>
-  <div class="table_header">
-    <h2>
-      <span>{{tableTitle}}</span>
-      <mat-icon (click)="openConfig()" *ngIf="isMoblie">
-        settings
-      </mat-icon>
-    </h2>
-    <button (click)="openConfig()" mat-button *ngIf="!isMoblie">
+    <div class="table_header">
+        <h2>
+            <span>{{tableTitle}}</span>
+            <fa-icon [icon]="configIcon" (click)="openConfig()" class="fil_icon" *ngIf="isMoblie"></fa-icon>
+            <fil-tooltip [isMobile]="isMoblie" title="More info" [tooltips]="tooltips"></fil-tooltip>
+        </h2>
+        <button (click)="openConfig()" mat-button *ngIf="!isMoblie">
       <fa-icon [icon]="configIcon"></fa-icon>
       <span>
         Ansicht Personalisieren
       </span>
     </button>
-  </div>
-  <table *ngIf="tableData">
-    <thead>
-      <ng-container *ngFor="let head of tableData.head">
-        <th *ngIf="head.show">
-          {{head.value}}
-        </th>
-      </ng-container>
-      <th *ngIf="tableData.hasBtn"></th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cell of tableData.body">
-        <ng-container *ngFor="let head of tableData.head">
-          <td *ngIf="head.show" >
-            {{ cell[head.key].name ? cell[head.key].name : cell[head.key] }}
-            <ng-container *ngIf="cell[head.key].hasLink">
-              <div class="td_link">
-                <a>
+    </div>
+    <table *ngIf="tableData">
+        <thead>
+            <ng-container *ngFor="let head of tableData.head">
+                <th *ngIf="head.show">
+                    {{head.value}}
+                </th>
+            </ng-container>
+            <th *ngIf="tableData.hasBtn"></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cell of tableData.body">
+                <ng-container *ngFor="let head of tableData.head">
+                    <td *ngIf="head.show">
+                        {{ cell[head.key].name ? cell[head.key].name : cell[head.key] }}
+                        <ng-container *ngIf="cell[head.key].hasLink">
+                            <div class="td_link">
+                                <a>
                   {{cell[head.key].link.name}}  
                 </a>
-                <mat-icon>
-                  link
-                </mat-icon>
-              </div>
-            </ng-container>
-            <ng-container *ngIf="cell[head.key].hasPer">
-              <p [class]="cell[head.key].hasClass ? cell[head.key].class : ''">
-                {{cell[head.key].per}}
-              </p>
-            </ng-container>
-          </td>
-        </ng-container>
-        <ng-container *ngIf="cell.hasBtn || cell.hasMore">
-          <td>
-            <div class="tr_btns">
-              <button mat-flat-button color="primary" *ngIf="cell.hasBtn">
+                                <mat-icon>
+                                    link
+                                </mat-icon>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="cell[head.key].hasPer">
+                            <p [class]="cell[head.key].hasClass ? cell[head.key].class : ''">
+                                {{cell[head.key].per}}
+                            </p>
+                        </ng-container>
+                    </td>
+                </ng-container>
+                <ng-container *ngIf="cell.hasBtn || cell.hasMore">
+                    <td>
+                        <div class="tr_btns">
+                            <button mat-flat-button color="primary" *ngIf="cell.hasBtn">
                 {{cell.btnTitle}}
               </button>
-              <button mat-icon-button [matMenuTriggerFor]="tableMenu">
+                            <button mat-icon-button [matMenuTriggerFor]="tableMenu">
                 <mat-icon>more_horiz</mat-icon>
               </button>
-                <mat-menu #tableMenu="matMenu">
-                  <button mat-menu-item *ngFor="let item of cell.hasMoreMenu">
+                            <mat-menu #tableMenu="matMenu">
+                                <button mat-menu-item *ngFor="let item of cell.hasMoreMenu">
                     <span>{{item}}</span>
                   </button>
-                </mat-menu>
-            </div>
-          </td>
-        </ng-container>
-      </tr>
-    </tbody>
-  </table>
+                            </mat-menu>
+                        </div>
+                    </td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
 </section>

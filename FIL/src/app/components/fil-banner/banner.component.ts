@@ -1,8 +1,10 @@
+import { IconService } from 'src/app/icon.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { CommonService } from 'src/app/common.service';
 import { MediaQueryService } from 'src/app/media-query.service';
+
 @Component({
   selector: 'fil-banner',
   templateUrl: './banner.component.html',
@@ -17,7 +19,7 @@ export class BannerComponent implements OnInit {
   isTablet:boolean = false;
   islaptop:boolean = false;
   isdesktop:boolean = true;
-  constructor(private mq:MediaQueryService,private http:HttpClient,private common:CommonService) { }
+  constructor(private mq:MediaQueryService,private http:HttpClient,private common:CommonService,public icon:IconService) { }
   ngOnInit(): void {
     this.bannerData = {}
     this.mq.query().subscribe(data=>{

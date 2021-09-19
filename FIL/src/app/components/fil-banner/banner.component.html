@@ -1,49 +1,50 @@
 <ng-container *ngIf="!isMoblie">
-  <div>
-    <div class="banner_personalInfo">
-      <img src="./assets/img/fil-logo.svg" alt="">
-      <span class="banner_personalInfo_btn">
-        <mat-icon class="banner_personalInfo_btn_icon">perm_identity</mat-icon>
+    <div>
+        <div class="banner_personalInfo">
+            <img src="./assets/img/fil-logo.svg" alt="">
+            <span class="banner_personalInfo_btn">
+        <!-- <mat-icon class="banner_personalInfo_btn_icon">perm_identity</mat-icon> -->
+        <fa-icon [icon]="icon.user" class="fil_icon"></fa-icon>
         <span>
           Personal Data
         </span>
-      </span>
+            </span>
+        </div>
     </div>
-  </div>
-  <nav>
-    <div *ngFor="let nav of navBtns;let i = index" class="normal_navbar">
-      <ng-container *ngIf="!nav.hasChildren">
-        <span [class]="i == 0?'nav_btn active':'nav_btn'">{{nav.title}}</span>
-      </ng-container>
-      <ng-container *ngIf="nav.hasChildren">
-        <button [class]="i == 0?'nav_btn active':'nav_btn'" [matMenuTriggerFor]="aboveMenu">
+    <nav>
+        <div *ngFor="let nav of navBtns;let i = index" class="normal_navbar">
+            <ng-container *ngIf="!nav.hasChildren">
+                <span [class]="i == 0?'nav_btn active':'nav_btn'">{{nav.title}}</span>
+            </ng-container>
+            <ng-container *ngIf="nav.hasChildren">
+                <button [class]="i == 0?'nav_btn active':'nav_btn'" [matMenuTriggerFor]="aboveMenu">
           {{nav.title}}
           <mat-icon>expand_more</mat-icon>
         </button>
-        <mat-menu class="nav_btn_childMenu" #aboveMenu="matMenu" xPosition="before">
-          <button mat-menu-item *ngFor="let child of nav.childrenItem">{{child.title}}</button>
-        </mat-menu>
-      </ng-container>
-    </div>
-    <div class="medium_navbar">
-      <button mat-icon-button [matMenuTriggerFor]="mobileNav" aria-label="header menu toggle" class="header_menu_btn">
+                <mat-menu class="nav_btn_childMenu" #aboveMenu="matMenu" xPosition="before">
+                    <button mat-menu-item *ngFor="let child of nav.childrenItem">{{child.title}}</button>
+                </mat-menu>
+            </ng-container>
+        </div>
+        <div class="medium_navbar">
+            <button mat-icon-button [matMenuTriggerFor]="mobileNav" aria-label="header menu toggle" class="header_menu_btn">
         <mat-icon>menu</mat-icon>
       </button>
-      <mat-menu #mobileNav="matMenu">
-        <ng-container *ngFor="let nav of navBtns;let i = index">
-          <ng-container *ngIf="!nav.hasChildren">
-            <button mat-menu-item>{{nav.title}}</button>
-          </ng-container>
-          <ng-container *ngIf="nav.hasChildren">
-            <button mat-menu-item [matMenuTriggerFor]="aboveMenu">{{nav.title}}</button>
-              <mat-menu class="" #aboveMenu="matMenu" xPosition="before">
-                <button mat-menu-item *ngFor="let child of nav.childrenItem">{{child.title}}</button>
+            <mat-menu #mobileNav="matMenu">
+                <ng-container *ngFor="let nav of navBtns;let i = index">
+                    <ng-container *ngIf="!nav.hasChildren">
+                        <button mat-menu-item>{{nav.title}}</button>
+                    </ng-container>
+                    <ng-container *ngIf="nav.hasChildren">
+                        <button mat-menu-item [matMenuTriggerFor]="aboveMenu">{{nav.title}}</button>
+                        <mat-menu class="" #aboveMenu="matMenu" xPosition="before">
+                            <button mat-menu-item *ngFor="let child of nav.childrenItem">{{child.title}}</button>
+                        </mat-menu>
+                    </ng-container>
+                </ng-container>
             </mat-menu>
-          </ng-container>
-        </ng-container>
-      </mat-menu>
-    </div>
-  </nav>
+        </div>
+    </nav>
 </ng-container>
 <div class="banner_body">
     <div class="banner_value_card">
@@ -52,23 +53,23 @@
             <h4 class="banner_value_card_item">Gesamtwert</h4>
         </div>
         <div class="banner_value_card_value_con">
-            <span class="banner_value_card_item banner_value_amount">120.500,000 €</span>
-            <span class="banner_value_card_item tips">inkl. Konto</span>
+            <span class="banner_value_card_item banner_value_amount">120.500,000<fa-icon class="fil_icon_alt" [icon]="icon.euro"></fa-icon></span>
+            <span class="banner_value_card_item tips">inkl. Konto <fa-icon class="fil_icon_alt" [icon]="icon.info"></fa-icon></span>
         </div>
         <div class="banner_value_card_value_con">
-            <span class="banner_value_card_item banner_value_amount">2.000 €</span>
-            <span class="banner_value_card_item tips">Konto</span>
+            <span class="banner_value_card_item banner_value_amount">2.000 <fa-icon class="fil_icon_alt" [icon]="icon.euro"></fa-icon></span>
+            <span class="banner_value_card_item tips">Konto <fa-icon class="fil_icon_alt" [icon]="icon.info"></fa-icon></span>
         </div>
     </div>
     <div class="banner_performance_card">
-        <p class="banner_performance_card_item banner_performance_card_head">Performance</p>        
+        <p class="banner_performance_card_item banner_performance_card_head">Performance</p>
         <p class="banner_performance_card_item" *ngFor="let item of bannerData['performance']">
             <span class="performance_item_title">
                 {{item.name}}
             </span>
             <span class="performance_item_amount">
                 <span>{{item.amount}}</span>
-                <mat-icon *ngIf="item.hasTooltip" class="error_outline">error_outline</mat-icon>
+            <fa-icon [icon]="icon.info" class="fil_icon"></fa-icon>
             </span>
         </p>
     </div>
@@ -77,10 +78,8 @@
             Quick-Links
         </p>
         <p class="banner_quickLinks_card_item" *ngFor="let item of bannerData['quickLinks']">
-          <mat-icon>
-            {{item.icon}}
-          </mat-icon>
-          <span>
+            <fa-icon *ngIf="icon[item.iconName]" [icon]="icon[item.iconName]" class="fil_icon"></fa-icon>
+            <span>
             {{item.title}}
           </span>
         </p>

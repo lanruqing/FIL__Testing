@@ -14,12 +14,14 @@ export class AppComponent {
   }
   tableData1;
   tableData2;
+  bottomLinks;
   ngOnInit(): void {
     this.common.getAlldate().subscribe(
       data=>{
         if(data){
           this.tableData1 = data["tableData1"]
           this.tableData2 = data["tableData2"]
+          this.bottomLinks = data["bottomLinks"]
         }
       }
     )

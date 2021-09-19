@@ -1,14 +1,30 @@
 @import './app/styles/variable.scss';
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-html, body { height: 100%; overflow-x: hidden;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-#page_body{
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+#page_body {
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
     background-color: $bg_gray;
+    .fil_icon {
+        margin-right: 0.5rem;
+    }
+    .fil_icon_alt {
+        margin-left: 0.3rem;
+    }
 }

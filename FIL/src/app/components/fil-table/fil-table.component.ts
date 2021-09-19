@@ -18,6 +18,11 @@ export class FilTableComponent implements OnInit {
   isTablet:boolean = false;
   islaptop:boolean = false;
   isdesktop:boolean = true;
+  tooltips = [
+    "Jahresbetarg: 150,40",
+    "EUREinstandswert: 30.11.2012",
+    "FestIegungsfrist: 150,40"
+  ]
   constructor(private http:HttpClient,private mq:MediaQueryService,private dialog:MatDialog) { }
   openConfig(){
     const dialogRef = this.dialog.open(TableEditComponent,{

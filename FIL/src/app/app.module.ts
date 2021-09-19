@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FilBottomLinksComponent } from './components/fil-bottom-links/fil-bottom-links.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BannerComponent,
     FilHeaderComponent,
     TableEditComponent,
-    FilFooterComponent
+    FilFooterComponent,
+    FilBottomLinksComponent
   ],
   imports: [
     BrowserModule,

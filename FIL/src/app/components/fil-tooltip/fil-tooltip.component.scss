@@ -1,0 +1,65 @@
+@import '../../styles/main.scss';
+.tootip_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 100;
+    &.small {
+        font-size: 0.8rem;
+    }
+    &.big {
+        font-size: 1.5rem;
+    }
+    .tooltip_title {
+        margin-right: 0.3rem;
+    }
+    .tootip_body {
+        position: relative;
+        .tooltip_icon {
+            cursor: pointer;
+        }
+        .tootip_content {
+            font-weight: normal;
+            font-size: 0.8rem;
+            color: $light_gray;
+             ::after {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 20px;
+                border-top: 1px solid #747c89;
+                border-left: 1px solid #747c89;
+                transform: rotate(45deg);
+                position: absolute;
+                left: 50%;
+                background: white;
+                top: -11px;
+                z-index: 99;
+            }
+            ;
+            color: #4d5766;
+            position: absolute;
+            border: 1px solid #747c89;
+            left: -10rem;
+            top: 2.5rem;
+            width: 20rem;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0 1rem 0.5rem;
+            z-index: 99;
+            .tootip_content_close {
+                padding-top: 0.5rem;
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                font-size: 1.2rem;
+                .fil_icon {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

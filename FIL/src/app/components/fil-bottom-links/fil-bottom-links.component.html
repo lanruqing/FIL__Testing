@@ -1,0 +1,13 @@
+<section>
+    <div class="bottom_links_container">
+        <div *ngFor="let block of links">
+            <h3>
+                {{block.title}}
+            </h3>
+            <a [href]="link.link" *ngFor="let link of block.links">
+                {{link.name}}
+                <fa-icon *ngIf="link.isExternal" [icon]="icon.external" class="fil_icon_alt external_link_icon"></fa-icon>
+            </a>
+        </div>
+    </div>
+</section>
