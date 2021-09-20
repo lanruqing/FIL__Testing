@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { IconService } from 'src/app/icon.service';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 @Component({
   selector: 'fil-footer',
   templateUrl: './fil-footer.component.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilFooterComponent implements OnInit {
 
-  constructor() { }
-
+  declare window:Window;
+  constructor(public icon:IconService) { }
+  @Output() toTop = new EventEmitter
   ngOnInit(): void {
   }
-
+  backTop(){
+    this.toTop.emit(true);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 }

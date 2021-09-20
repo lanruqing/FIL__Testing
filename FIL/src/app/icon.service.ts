@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {faBars,faEllipsisV, faSignOutAlt,faHome,faUser, faInfoCircle, faFileAlt, faCog, faCogs, faEnvelope,faStream,faTimes,faEuroSign,faExternalLinkAlt  } from '@fortawesome/free-solid-svg-icons';
+import {faBars,faEllipsisV, faSignOutAlt,faHome,faUser, faInfoCircle, faFileAlt, faCog, faCogs, faEnvelope,faStream,faTimes,faEuroSign,faExternalLinkAlt,faCopyright,faArrowUp  } from '@fortawesome/free-solid-svg-icons';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,5 +18,7 @@ export class IconService {
   close = faTimes;
   euro = faEuroSign;
   external = faExternalLinkAlt;
+  copyRight = faCopyright;
+  up = faArrowUp;
   constructor() { }
 }

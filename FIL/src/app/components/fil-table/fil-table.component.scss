@@ -82,6 +82,9 @@ section {
 }
 
 @media (max-width:$mobile) {
+    section {
+        margin-bottom: 1rem;
+    }
     .table_header {
         h2 {
             display: flex;

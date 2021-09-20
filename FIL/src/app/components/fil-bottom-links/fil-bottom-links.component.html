@@ -1,6 +1,6 @@
 <section>
     <div class="bottom_links_container">
-        <div *ngFor="let block of links">
+        <div class="bottom_links_card" *ngFor="let block of links">
             <h3>
                 {{block.title}}
             </h3>
@@ -8,6 +8,16 @@
                 {{link.name}}
                 <fa-icon *ngIf="link.isExternal" [icon]="icon.external" class="fil_icon_alt external_link_icon"></fa-icon>
             </a>
+        </div>
+        <div class="bottom_links_card">
+            <h3>
+                Haben Sie Fragen?
+            </h3>
+            <p class="bottom_links_number">
+                Für Privatanleger:
+                <span>06173 509-1923</span> (Mo - Fr von 8 bis 18 Uhr)
+            </p>
+            <a href="https://www.fidelity.de/">Alle Kontakt-Möglichkeiten</a>
         </div>
     </div>
 </section>

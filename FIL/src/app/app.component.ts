@@ -26,4 +26,12 @@ export class AppComponent {
       }
     )
   }
+  toTop($e){
+    if($e){
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+  }
 }
