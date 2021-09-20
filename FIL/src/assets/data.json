@@ -146,7 +146,11 @@
                 "ges_E": "3.520,55 EUR",
                 "ges_F": "3000",
                 "performance": "+15.50%",
-                "performanceE": "+15.50%",
+                "performanceE": {
+                    "name": "+15.50%",
+                    "hasCustomerClass": true,
+                    "class": "green_text"
+                },
                 "hasBtn": true,
                 "btnTitle": "Fonds Kaufen",
                 "hasMore": true,
@@ -163,7 +167,11 @@
                 "ges_E": "3.520,55",
                 "ges_F": "3000",
                 "performance": "-15.50%",
-                "performanceE": "-15.50%",
+                "performanceE": {
+                    "name": "-15.50%",
+                    "hasCustomerClass": true,
+                    "class": "red_text"
+                },
                 "hasBtn": true,
                 "btnTitle": "Fonds Kaufen",
                 "hasMore": true,
@@ -242,7 +250,11 @@
                 "ges_E": "3.520,55 EUR",
                 "ges_F": "3000",
                 "performance": "+15.50%",
-                "performanceE": "+15.50%",
+                "performanceE": {
+                    "name": "+20.50%",
+                    "hasCustomerClass": true,
+                    "class": "green_text"
+                },
                 "hasBtn": true,
                 "btnTitle": "Fonds Kaufen",
                 "hasMore": true,
@@ -259,7 +271,11 @@
                 "ges_E": "3.520,55",
                 "ges_F": "3000",
                 "performance": "-15.50%",
-                "performanceE": "-15.50%",
+                "performanceE": {
+                    "name": "-2.50%",
+                    "hasCustomerClass": true,
+                    "class": "red_text"
+                },
                 "hasBtn": true,
                 "btnTitle": "Fonds Kaufen",
                 "hasMore": true,

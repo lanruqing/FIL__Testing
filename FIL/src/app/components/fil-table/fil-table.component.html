@@ -6,11 +6,11 @@
             <fil-tooltip [isMobile]="isMoblie" title="More info" [tooltips]="tooltips"></fil-tooltip>
         </h2>
         <button (click)="openConfig()" mat-button *ngIf="!isMoblie">
-      <fa-icon [icon]="configIcon"></fa-icon>
-      <span>
-        Ansicht Personalisieren
-      </span>
-    </button>
+            <fa-icon [icon]="configIcon"></fa-icon>
+            <span>
+                Ansicht Personalisieren
+            </span>
+        </button>
     </div>
     <table *ngIf="tableData">
         <thead>
@@ -25,15 +25,15 @@
             <tr *ngFor="let cell of tableData.body">
                 <ng-container *ngFor="let head of tableData.head">
                     <td *ngIf="head.show">
-                        {{ cell[head.key].name ? cell[head.key].name : cell[head.key] }}
+                        <span [class]="cell[head.key].hasCustomerClass ? cell[head.key].class : ''">
+                            {{ cell[head.key].name ? cell[head.key].name : cell[head.key] }}
+                        </span>
                         <ng-container *ngIf="cell[head.key].hasLink">
                             <div class="td_link">
                                 <a>
-                  {{cell[head.key].link.name}}  
-                </a>
-                                <mat-icon>
-                                    link
-                                </mat-icon>
+                                    {{cell[head.key].link.name}}
+                                </a>
+                                <fa-icon [icon]="icon.external" class="fil_icon_alt"></fa-icon>
                             </div>
                         </ng-container>
                         <ng-container *ngIf="cell[head.key].hasPer">
@@ -47,15 +47,16 @@
                     <td>
                         <div class="tr_btns">
                             <button mat-flat-button color="primary" *ngIf="cell.hasBtn">
-                {{cell.btnTitle}}
-              </button>
+                                {{cell.btnTitle}}
+                            </button>
                             <button mat-icon-button [matMenuTriggerFor]="tableMenu">
-                <mat-icon>more_horiz</mat-icon>
-              </button>
+                                <!-- <mat-icon>more_horiz</mat-icon> -->
+                                <fa-icon [icon]="icon.menuDotHori" class="fil_icon_alt"></fa-icon>
+                            </button>
                             <mat-menu #tableMenu="matMenu">
                                 <button mat-menu-item *ngFor="let item of cell.hasMoreMenu">
-                    <span>{{item}}</span>
-                  </button>
+                                    <span>{{item}}</span>
+                                </button>
                             </mat-menu>
                         </div>
                     </td>

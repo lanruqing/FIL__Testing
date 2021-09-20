@@ -13,8 +13,7 @@ export class FilFooterComponent implements OnInit {
   ngOnInit(): void {
   }
   backTop(){
-    this.toTop.emit(true);
-    window.scrollTo({
+    document.body.scrollTo({
       top: 0,
       behavior: 'smooth'
     })

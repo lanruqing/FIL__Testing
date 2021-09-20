@@ -12,6 +12,7 @@ export class AppComponent {
   constructor(private media:MediaQueryService,private http:HttpClient,private common:CommonService){
     // media.query();
   }
+  declare window:Window;
   tableData1;
   tableData2;
   bottomLinks;
@@ -28,7 +29,8 @@ export class AppComponent {
   }
   toTop($e){
     if($e){
-      window.scrollTo({
+      console.log(11111)
+      document.body.scrollTo({
         top: 0,
         behavior: 'smooth'
       })
